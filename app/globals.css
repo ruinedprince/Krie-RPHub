@@ -28,3 +28,7 @@
   --font-secondary: 'secondary';
   --font-tertiary: 'tertiary';
 }
+
+body {
+  background-color: #eeeeee;
+}
