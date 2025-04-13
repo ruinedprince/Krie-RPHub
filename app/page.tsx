@@ -1,4 +1,4 @@
-import InitialScreen from "./components/InitialScreen";
+import InitialScreen from "./components/InitialSection";
 
 export default function Home() {
   return (

@@ -16,27 +16,40 @@ function Model({ mousePosition }: { mousePosition: { x: number; y: number } }) {
     if (ref.current) {
       const tl = gsap.timeline({
         onComplete: () => {
-          animationCompleted.current = true;
+          if (ref.current) {
+            animationCompleted.current = true;
+
+            // Efeito de flutuação após a animação inicial
+            gsap.to(ref.current.position, {
+              y: "+=0.1", // Move levemente para cima
+              duration: 1.5,
+              ease: "power1.inOut",
+              yoyo: true, // Alterna entre subir e descer
+              repeat: -1, // Repetição infinita
+            });
+          }
         },
       });
 
       // Animação de surgimento (posição, rotação e opacidade)
-      tl.fromTo(
-        ref.current.position,
-        { y: -10 }, // Posição inicial (fora da tela)
-        { y: 0, duration: 1.5, ease: "power2.inOut" } // Posição final
-      ).fromTo(
-        ref.current.rotation,
-        { x: 0, y: 0, z: 0 }, // Rotação inicial
-        {
-          x: Math.PI / -32, // Rotação final no eixo X com +360º
-          y: Math.PI / -4 + 2 * Math.PI, // Rotação final no eixo Y
-          z: Math.PI / 16, // Rotação final no eixo Z
-          duration: 1.5,
-          ease: "power2.inOut",
-        },
-        "<" // Inicia ao mesmo tempo que a posição
-      );
+      if (ref.current) {
+        tl.fromTo(
+          ref.current.position,
+          { y: -10 }, // Posição inicial (fora da tela)
+          { y: 0, duration: 2.5, ease: "power2.inOut" } // Posição final
+        ).fromTo(
+          ref.current.rotation,
+          { x: 0, y: 0, z: 0 }, // Rotação inicial
+          {
+            x: Math.PI / -32, // Rotação final no eixo X com +360º
+            y: Math.PI / -4 + 2 * Math.PI, // Rotação final no eixo Y
+            z: Math.PI / 16, // Rotação final no eixo Z
+            duration: 2.5,
+            ease: "power2.inOut",
+          },
+          "<" // Inicia ao mesmo tempo que a posição
+        );
+      }
     }
   }, []);
 
@@ -70,17 +83,6 @@ function Loader() {
 export default function InitialScreen() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const canvasContainerRef = useRef<HTMLDivElement | null>(null);
-
-  // Animação inicial de opacidade com GSAP
-  useEffect(() => {
-    if (canvasContainerRef.current) {
-      gsap.fromTo(
-        canvasContainerRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 1.5, ease: "power2.inOut" }
-      );
-    }
-  }, []);
 
   // Função para capturar a posição do mouse
   const handleMouseMove = (
@@ -119,7 +121,7 @@ export default function InitialScreen() {
         {/* Modelo 3D */}
         <div
           ref={canvasContainerRef}
-          className="absolute flex justify-center items-center w-[90vw] h-full"
+          className="absolute flex justify-center items-center w-[50vw] h-full ml-[50vw]"
         >
           <Canvas>
             <ambientLight intensity={10} />
