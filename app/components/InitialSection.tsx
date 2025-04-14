@@ -97,7 +97,7 @@ export default function InitialScreen() {
   };
 
   return (
-    <div className="h-[200vh]" onMouseMove={handleMouseMove}>
+    <div className="h-[100vh]" onMouseMove={handleMouseMove}>
       <div
         className="relative w-[90vw] h-[90vh] justify-center-safe grid grid-flow-col grid-rows-4"
         style={{ marginTop: "5vh" }}
@@ -200,24 +200,23 @@ export default function InitialScreen() {
 
         <div className="flex items-end gap-2">
           <p
-            className="text-2xl leading-none select-none underline"
+            className="text-2xl leading-none select-none"
             style={{
               fontFamily: "var(--font-secondary)",
             }}
           >
-            the
+            the{" "}
           </p>
-          <p
-            className="text-2xl leading-none select-none underline"
+          <span
+            className="text-2xl"
             style={{
               fontFamily: "var(--font-primary)",
-              marginBottom: "2px",
             }}
           >
             /'ru:.ind prins/
-          </p>
+          </span>
           <p
-            className="text-2xl leading-none select-none underline"
+            className="text-2xl leading-none select-none"
             style={{
               fontFamily: "var(--font-secondary)",
             }}
