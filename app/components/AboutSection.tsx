@@ -159,9 +159,6 @@ export default function AboutSection() {
           vídeo, como eu disse, gosto muito de criar, não importa o que seja.
         </p>
       </div>
-      <div className="relative top-0 right-0 w-1/2 h-[90vh]">
-        texto
-      </div>
       <div
         className="absolute flex justify-end items-center w-[90vw] h-[90vh]"
         style={{ zIndex: -1 }}
