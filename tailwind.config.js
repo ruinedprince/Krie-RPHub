@@ -12,4 +12,8 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'shadow-custom-initial',
+    'shadow-custom'
+  ],
 };

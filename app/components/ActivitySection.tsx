@@ -31,7 +31,7 @@ export default function InitialScreen() {
       >
         <div className="flex flex-col justify-center items-center z-10">
           <p
-            className="transition-colors duration-200 hover:text-[#eeeeee]"
+            className=""
             style={{
               fontFamily: "var(--font-tertiary)",
             }}
@@ -48,8 +48,8 @@ export default function InitialScreen() {
             Minhas últimas atividades
           </p>
           <div className="flex flex-col">
-            <div className="bg-transparent p-5 border border-red-500 rounded-[20px] transition-shadow duration-300 ease-in-out flex flex-col gap-5 hover:bg-[#eeeeee] hover:shadow-custom cursor-pointer">
-              <div className="h-[360px] w-[360px] bg-[#1e1e1e] rounded-[20px] transition-shadow duration-300 ease-in-out hover:shadow-custom"></div>
+            <div className="bg-transparent p-5 rounded-[20px] transition-shadow duration-750 ease-in-out flex flex-col gap-5 [box-shadow:0px_8px_12px_6px_#eeeeee,0px_4px_4px_0px_#eeeeee] hover:bg-[#eeeeee] hover:shadow-2xl hover:shadow-stone-950">
+              <div className="h-[360px] w-[360px] bg-[#1e1e1e] rounded-[20px] duration-750 transition-shadow hover:shadow-2xl hover:shadow-stone-950" ></div>
               <div className="flex place-content-between items-center">
                 <div className="flex gap-5 items-center">
                   <UserCircle size={40} />
@@ -62,7 +62,7 @@ export default function InitialScreen() {
                     @usuário
                   </p>
                 </div>
-                <LinkedinLogo size={40} />
+                <LinkedinLogo size={40} className="cursor-pointer"/>
               </div>
             </div>
           </div>
