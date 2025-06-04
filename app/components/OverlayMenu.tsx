@@ -5,7 +5,7 @@ import { List } from "@phosphor-icons/react";
 export default function OverlayMenu() {
   return (
     <div
-      className="fixed grid grid-cols-2 grid-rows-2 w-[90vw] h-[90vh] z-100"
+      className="fixed grid grid-cols-2 grid-rows-2 w-[90vw] h-[90vh] z-100 m-0 p-0"
       style={{
         top: "5vh",
         left: "50%",
