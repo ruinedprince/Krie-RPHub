@@ -1,4 +1,6 @@
+import AboutSection from "./components/AboutSection";
 import InitialScreen from "./components/InitialSection";
+import MusicPlayer from "./components/MusicPlayer";
 import OverlayMenu from "./components/OverlayMenu";
 
 export default function Home() {
@@ -6,6 +8,8 @@ export default function Home() {
     <div className="grid min-h-screen place-content-center">
       <OverlayMenu />
       <InitialScreen />
+      <AboutSection />
+      <MusicPlayer />
     </div>
   );
 }
