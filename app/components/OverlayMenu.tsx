@@ -10,6 +10,7 @@ export default function OverlayMenu() {
         top: "5vh",
         left: "50%",
         transform: "translateX(-50%)",
+        pointerEvents: "none", // Permite clicar nos elementos abaixo do overlay
       }}
     >
       <p
@@ -24,21 +25,25 @@ export default function OverlayMenu() {
         KRIE
       </p>
 
-      <div className="flex justify-end items-start gap-[60px]">
+      {/* Só esta div recebe eventos de clique */}
+      <div
+        className="flex justify-end items-start gap-[60px]"
+        style={{ pointerEvents: "auto" }}
+      >
         <button
-          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none"
+          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none cursor-pointer"
           style={{ fontFamily: "var(--font-primary)" }}
         >
           Sobre
         </button>
         <button
-          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none"
+          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none cursor-pointer"
           style={{ fontFamily: "var(--font-primary)" }}
         >
           Projetos
         </button>
         <button
-          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none"
+          className="bg-transparent text-[24px] font-primary leading-none transition-colors ease-in-out duration-300 hover:text-[#bebebe] active:text-[#eeeeee] active:transition-none cursor-pointer"
           style={{ fontFamily: "var(--font-primary)" }}
         >
           Músicas
